@@ -1,4 +1,4 @@
-name: release
+name: create-release-pr
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - 'release/**' 
 
 jobs:
-  release:
+  create-release-pr:
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
