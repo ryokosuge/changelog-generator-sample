@@ -47,10 +47,13 @@ jobs:
         uses: peter-evans/create-pull-request@v3
         with:
           token: ${{ env.GITHUB_TOKEN }}
-          title: release ${{ env.RELEASE_VERSION }}
-          body: release
+          title: release v${{ env.RELEASE_VERSION }}
+          body: |
+            - [ ] CHANGELOG
+            - [ ] version up to v${{ env.RELEASE_VERSION }}
           labels: release
           branch: ${{ env.RELEASE_BRANCH }}
+          commit-message: "[ci skip] release v$RELEASE_VERSION"
           base: main
         env:
           RELEASE_BRANCH: ${{ steps.extract_branch.outputs.BRANCH }}
