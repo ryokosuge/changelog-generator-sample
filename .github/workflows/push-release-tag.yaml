@@ -9,25 +9,27 @@ on:
 
 jobs:
   push-release-tag:
-    if: github.event.pull_request.merged == true && startsWith(github.head_ref, 'refs/head/release/')
+    # if: github.event.pull_request.merged == true && startsWith(github.head_ref, 'release/')
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
     steps:
+      - name: output json
+        run: toJSON(github)
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.event.pull_request.head.sha }}
-      - name: Get the version
-        id: get_version
-        run: echo ::set-output name=VERSION::${GITHUB_HEAD_REF/refs\/heads\/release\//}
-      - name: Create Release
-        id: create_release
-        uses: softprops/action-gh-release@v1
-        with:
-          name: release v${{ env.RELEASE_VERSION }}
-          body: release v${{ env.RELEASE_VERSION }}
-          draft: false
-          prerelease: false
-          tag_name: v${{ env.RELEASE_VERSION }}
-        env:
-          RELEASE_VERSION: ${{ steps.get_version.outputs.VERSION }}
+      # - name: Get the version
+      #   id: get_version
+      #   run: echo ::set-output name=VERSION::${GITHUB_HEAD_REF/refs\/heads\/release\//}
+      # - name: Create Release
+      #   id: create_release
+      #   uses: softprops/action-gh-release@v1
+      #   with:
+      #     name: release v${{ env.RELEASE_VERSION }}
+      #     body: release v${{ env.RELEASE_VERSION }}
+      #     draft: false
+      #     prerelease: false
+      #     tag_name: v${{ env.RELEASE_VERSION }}
+      #   env:
+      #     RELEASE_VERSION: ${{ steps.get_version.outputs.VERSION }}
