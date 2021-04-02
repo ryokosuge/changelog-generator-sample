@@ -6,6 +6,7 @@
 
 **Implemented enhancements:**
 
+- 動け [\#16](https://github.com/ryokosuge/changelog-generator-sample/pull/16) ([ryokosuge](https://github.com/ryokosuge))
 - PR merge後のworkflowの作成 [\#12](https://github.com/ryokosuge/changelog-generator-sample/pull/12) ([ryokosuge](https://github.com/ryokosuge))
 - release v1.2.0 [\#10](https://github.com/ryokosuge/changelog-generator-sample/pull/10) ([ryokosuge](https://github.com/ryokosuge))
 - Github Actionsでrelease処理をする [\#8](https://github.com/ryokosuge/changelog-generator-sample/pull/8) ([ryokosuge](https://github.com/ryokosuge))
@@ -13,10 +14,12 @@
 
 **Fixed bugs:**
 
+- PR [\#15](https://github.com/ryokosuge/changelog-generator-sample/pull/15) ([ryokosuge](https://github.com/ryokosuge))
 - CHANGELOGのバージョン修正 [\#6](https://github.com/ryokosuge/changelog-generator-sample/pull/6) ([ryokosuge](https://github.com/ryokosuge))
 
 **Merged pull requests:**
 
+- feat:	... [\#14](https://github.com/ryokosuge/changelog-generator-sample/pull/14) ([ryokosuge](https://github.com/ryokosuge))
 - Update README [\#11](https://github.com/ryokosuge/changelog-generator-sample/pull/11) ([ryokosuge](https://github.com/ryokosuge))
 
 ## [v1.0.0](https://github.com/ryokosuge/changelog-generator-sample/tree/v1.0.0) (2021-04-02)
