@@ -49,5 +49,5 @@ jobs:
           body: release
           labels: release
           branch: ${{ env.PR_BRANCH_NAME }}
-          base: develop
+          base: main
 
