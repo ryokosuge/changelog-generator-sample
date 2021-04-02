@@ -13,4 +13,3 @@ npm/version:
 changelog:
 	docker run -it --rm -v "$(shell pwd)":/usr/local/src/your-app ferrarimarco/github-changelog-generator --user ryokosuge --project changelog-generator-sample --token $(GITHUB_TOKEN) --future-release v$(VERSION)
 	git commit -a -m "doc: Update CHANGELOG"
-	git push origin $(BRANCH)
