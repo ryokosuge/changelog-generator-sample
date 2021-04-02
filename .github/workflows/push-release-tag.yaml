@@ -1,10 +1,13 @@
 name: push-release-tag
 
 on:
-  pull_request:
+  push:
     branches:
-      # - master
       - feature/release-tag
+  # pull_request:
+    # branches:
+      # - master
+      # - feature/release-tag
     # types: [closed]
 
 jobs:
@@ -15,11 +18,12 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v2
-        with:
-          ref: ${{ github.event.pull_request.head.sha }}
+        # with:
+        #   ref: ${{ github.event.pull_request.head.sha }}
       - name: Get the version
         id: get_version
-        run: echo ::set-output name=VERSION::${GITHUB_HEAD_REF/refs\/heads\/release\//}
+        # run: echo ::set-output name=VERSION::${GITHUB_HEAD_REF/refs\/heads\/release\//}
+        run: echo ::set-output name=VERSION::2.0.0
       - name: Extract branch name
         shell: bash
         run: echo ::set-output name=BRANCH::${GITHUB_HEAD_REF/refs\/heads\//}
