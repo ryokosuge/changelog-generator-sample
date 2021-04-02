@@ -1,8 +1,21 @@
 # Changelog
 
+## [v1.1.0](https://github.com/ryokosuge/changelog-generator-sample/tree/v1.1.0) (2021-04-02)
+
+[Full Changelog](https://github.com/ryokosuge/changelog-generator-sample/compare/v1.0.0...v1.1.0)
+
+**Implemented enhancements:**
+
+- Github Actionsでrelease処理をする [\#8](https://github.com/ryokosuge/changelog-generator-sample/pull/8) ([ryokosuge](https://github.com/ryokosuge))
+- exclued-labelsでreleaseラベル外した [\#7](https://github.com/ryokosuge/changelog-generator-sample/pull/7) ([ryokosuge](https://github.com/ryokosuge))
+
+**Fixed bugs:**
+
+- CHANGELOGのバージョン修正 [\#6](https://github.com/ryokosuge/changelog-generator-sample/pull/6) ([ryokosuge](https://github.com/ryokosuge))
+
 ## [v1.0.0](https://github.com/ryokosuge/changelog-generator-sample/tree/v1.0.0) (2021-04-02)
 
-[Full Changelog](https://github.com/ryokosuge/changelog-generator-sample/compare/e296b65a23af36d71be86ae72c4f423e1777be2e...v)
+[Full Changelog](https://github.com/ryokosuge/changelog-generator-sample/compare/e296b65a23af36d71be86ae72c4f423e1777be2e...v1.0.0)
 
 **Implemented enhancements:**
 
