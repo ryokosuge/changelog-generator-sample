@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: 15.x
       - name: Use Ruby 2.6.5
-        uses: actions/setup-ruby@v2
+        uses: actions/setup-ruby@v1
         with:
           node-version: 2.6.5
       - name: install github-changelog-generate
