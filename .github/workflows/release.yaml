@@ -32,14 +32,14 @@ jobs:
       - name: create CHANGELOG
         run: make changelog
         env:
-          BRANCH: ${{ steps.extract_branch.outputs.BRANCH }}
+          RELEASE_BRANCH: ${{ steps.extract_branch.outputs.BRANCH }}
           RELEASE_VERSION: ${{ steps.get_version.outputs.VERSION }}
       - name: set npm config
         run: npm config set git-tag-version false
       - name: npm version
         run: make release_version_tag
         env:
-          BRANCH: ${{ steps.extract_branch.outputs.BRANCH }}
+          RELEASE_BRANCH: ${{ steps.extract_branch.outputs.BRANCH }}
           RELEASE_VERSION: ${{ steps.get_version.outputs.VERSION }}
       - name: git diff
         run: git diff
@@ -47,8 +47,11 @@ jobs:
         uses: peter-evans/create-pull-request@v3
         with:
           token: ${{ env.GITHUB_TOKEN }}
-          title: release ${{ steps.get_version.outputs.VERSION }}
+          title: release ${{ env.RELEASE_VERSION }}
           body: release
           labels: release
-          branch: ${{ steps.extract_branch.outputs.BRANCH }}
+          branch: ${{ env.RELEASE_BRANCH }}
           base: main
+        env:
+          RELEASE_BRANCH: ${{ steps.extract_branch.outputs.BRANCH }}
+          RELEASE_VERSION: ${{ steps.get_version.outputs.VERSION }}

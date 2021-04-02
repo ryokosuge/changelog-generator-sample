@@ -1,3 +1,4 @@
+RELEASE_BRANCH?=
 RELEASE_VERSION?=$(shell echo $(RELEASE_BRANCH) | sed s/release\\///)
 GITHUB_TOKEN?=
 
