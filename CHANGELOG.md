@@ -1,5 +1,13 @@
 # Changelog
 
+## [v1.1.0](https://github.com/ryokosuge/changelog-generator-sample/tree/v1.1.0) (2021-04-02)
+
+[Full Changelog](https://github.com/ryokosuge/changelog-generator-sample/compare/1.0.1...v1.1.0)
+
+**Implemented enhancements:**
+
+- npm initした [\#3](https://github.com/ryokosuge/changelog-generator-sample/pull/3) ([ryokosuge](https://github.com/ryokosuge))
+
 ## [1.0.1](https://github.com/ryokosuge/changelog-generator-sample/tree/1.0.1) (2021-04-02)
 
 [Full Changelog](https://github.com/ryokosuge/changelog-generator-sample/compare/1.0.0...1.0.1)
