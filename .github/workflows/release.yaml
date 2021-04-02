@@ -17,10 +17,10 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 15.x
-      - name: Use Ruby 2.6.5
-        uses: actions/setup-ruby@v1
+      - name: Use Ruby 2.6
+        uses: ruby/setup-ruby@v1
         with:
-          node-version: 2.6.5
+          ruby-version: 2.6
       - name: install github-changelog-generate
         run: gem install github-changelog-generate
       - name: Extract branch name
