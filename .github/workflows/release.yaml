@@ -21,8 +21,8 @@ jobs:
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: 2.6
-      - name: install github-changelog-generate
-        run: gem install github-changelog-generate
+      - name: install github_changelog_generate
+        run: gem install github_changelog_generator
       - name: Extract branch name
         shell: bash
         run: echo ::set-output name=branch::${GITHUB_REF/refs\/heads\//}

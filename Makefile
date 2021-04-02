@@ -9,7 +9,7 @@ release-version-tag:
 	npm version $(RELEASE_VERSION) -m "tag: release %s."
 
 changelog:
-	github-changelog-generator \
+	github_changelog_generator \
 		--user ryokosuge \
 		--project changelog-generator-sample \
 		--exclude-labels release \
