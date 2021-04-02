@@ -2,8 +2,7 @@ name: push-release-tag
 
 on:
   pull_request:
-    types:
-      - closed
+    types: [closed]
 
 jobs:
   push-release-tag:
