@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - 'release/**' 
-      - 'feature/github-actions-release'
 
 jobs:
   release:
@@ -23,30 +22,33 @@ jobs:
           ruby-version: 2.6
       - name: install github_changelog_generate
         run: gem install github_changelog_generator
+      - name: Get the version
+        id: get_version
+        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/heads\/release\//}
       - name: Extract branch name
         shell: bash
-        run: echo ::set-output name=branch::${GITHUB_REF/refs\/heads\//}
+        run: echo ::set-output name=BRANCH::${GITHUB_REF/refs\/heads\//}
         id: extract_branch
       - name: create CHANGELOG
         run: make changelog
         env:
-          BRANCH: ${{ steps.extract_branch.outputs.branch }}
-          RELEASE_VERSION: 1.1.0
+          BRANCH: ${{ steps.extract_branch.outputs.BRANCH }}
+          RELEASE_VERSION: ${{ steps.get_version.outputs.VERSION }}
       - name: set npm config
         run: npm config set git-tag-version false
       - name: npm version
         run: make release_version_tag
         env:
-          BRANCH: ${{ steps.extract_branch.outputs.branch }}
-          RELEASE_VERSION: 1.1.0
+          BRANCH: ${{ steps.extract_branch.outputs.BRANCH }}
+          RELEASE_VERSION: ${{ steps.get_version.outputs.VERSION }}
       - name: git diff
         run: git diff
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
           token: ${{ env.GITHUB_TOKEN }}
-          title: release
+          title: release ${{ steps.get_version.outputs.VERSION }}
           body: release
           labels: release
-          branch: ${{ steps.extract_branch.outputs.branch }}
+          branch: ${{ steps.extract_branch.outputs.BRANCH }}
           base: main
