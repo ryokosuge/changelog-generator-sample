@@ -19,16 +19,16 @@ jobs:
           node-version: 15.x
       - name: Extract branch name
         shell: bash
-        run: echo "set-output name=branch::${GITHUB_REF#refs/heads/}"
+        run: echo ::set-output name=branch::${GITHUB_REF/refs\/heads\//}
         id: extract_branch
       - name: create CHANGELOG
         uses: heinrichreimer/github-changelog-generator-action@v2
         with:
           user: ryokosuge
           project: changelog-generator-sample
-          excludeLabels: release
           token: ${{ env.GITHUB_TOKEN }}
-          futureRelease: ${{ env.RELEASE_VERSION }}
+          exclude-labels: release
+          future-release: ${{ env.RELEASE_VERSION }}
         env:
           BRANCH: ${{ steps.extract_branch.outputs.branch }}
           RELEASE_VERSION: 1.1.0
