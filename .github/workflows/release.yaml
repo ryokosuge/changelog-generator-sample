@@ -17,7 +17,11 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 15.x
+      - name: Extract branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: extract_branch
       - name: create CHANGELOG
         run: echo $BRANCH
         env:
-          BRANCH: ${GITHUB_REF/refs\/heads\//}
+          BRANCH: ${{ steps.extract_branch.outputs.branch }}
