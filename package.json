@@ -1,0 +1,20 @@
+{
+  "name": "changelog-generator-sample",
+  "version": "1.0.0",
+  "description": "## normal",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ryokosuge/changelog-generator-sample.git"
+  },
+  "author": "ryokosuge <ryo.kosuge@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ryokosuge/changelog-generator-sample/issues"
+  },
+  "homepage": "https://github.com/ryokosuge/changelog-generator-sample#readme"
+}
