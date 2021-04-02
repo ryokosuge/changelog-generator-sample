@@ -1,0 +1,57 @@
+name: release
+
+on:
+  push:
+    branches:
+      - 'release/**' 
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 15.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: 15.x
+      - name: Use Ruby 2.6
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.6
+      - name: install github_changelog_generate
+        run: gem install github_changelog_generator
+      - name: Get the version
+        id: get_version
+        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/heads\/release\//}
+      - name: Extract branch name
+        shell: bash
+        run: echo ::set-output name=BRANCH::${GITHUB_REF/refs\/heads\//}
+        id: extract_branch
+      - name: create CHANGELOG
+        run: make changelog
+        env:
+          RELEASE_BRANCH: ${{ steps.extract_branch.outputs.BRANCH }}
+          RELEASE_VERSION: ${{ steps.get_version.outputs.VERSION }}
+      - name: set npm config
+        run: npm config set git-tag-version false
+      - name: npm version
+        run: make release_version_tag
+        env:
+          RELEASE_BRANCH: ${{ steps.extract_branch.outputs.BRANCH }}
+          RELEASE_VERSION: ${{ steps.get_version.outputs.VERSION }}
+      - name: git diff
+        run: git diff
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ env.GITHUB_TOKEN }}
+          title: release ${{ env.RELEASE_VERSION }}
+          body: release
+          labels: release
+          branch: ${{ env.RELEASE_BRANCH }}
+          base: main
+        env:
+          RELEASE_BRANCH: ${{ steps.extract_branch.outputs.BRANCH }}
+          RELEASE_VERSION: ${{ steps.get_version.outputs.VERSION }}
