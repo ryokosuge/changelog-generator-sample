@@ -17,18 +17,18 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: 15.x
+      - name: Use Ruby 2.6.5
+        uses: actions/setup-ruby@v2
+        with:
+          node-version: 2.6.5
+      - name: install github-changelog-generate
+        run: gem install github-changelog-generate
       - name: Extract branch name
         shell: bash
         run: echo ::set-output name=branch::${GITHUB_REF/refs\/heads\//}
         id: extract_branch
       - name: create CHANGELOG
-        uses: heinrichreimer/github-changelog-generator-action@v2
-        with:
-          user: ryokosuge
-          project: changelog-generator-sample
-          token: ${{ env.GITHUB_TOKEN }}
-          exclude-labels: release
-          future-release: ${{ env.RELEASE_VERSION }}
+        run: make changelog
         env:
           BRANCH: ${{ steps.extract_branch.outputs.branch }}
           RELEASE_VERSION: 1.1.0
