@@ -3,7 +3,7 @@ name: push-release-tag
 on:
   pull_request:
     branches:
-      - master
+      # - master
       - feature/release-tag
     # types: [closed]
 
