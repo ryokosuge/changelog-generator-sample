@@ -56,7 +56,7 @@ jobs:
             - [ ] version up to v${{ env.RELEASE_VERSION }}
           labels: release
           branch: ${{ env.RELEASE_BRANCH }}
-          commit-message: "[ci skip] release v$RELEASE_VERSION"
+          commit-message: "[ci skip] release v${{ env.RELEASE_VERSION }}"
           base: main
         env:
           RELEASE_BRANCH: ${{ steps.extract_branch.outputs.BRANCH }}
