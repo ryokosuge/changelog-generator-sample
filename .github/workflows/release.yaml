@@ -48,6 +48,5 @@ jobs:
           title: release
           body: release
           labels: release
-          branch: ${{ env.PR_BRANCH_NAME }}
+          branch: ${{ steps.extract_branch.outputs.branch }}
           base: main
-
