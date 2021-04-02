@@ -1,6 +1,6 @@
 # Changelog
 
-## [v](https://github.com/ryokosuge/changelog-generator-sample/tree/v) (2021-04-02)
+## [v1.0.0](https://github.com/ryokosuge/changelog-generator-sample/tree/v1.0.0) (2021-04-02)
 
 [Full Changelog](https://github.com/ryokosuge/changelog-generator-sample/compare/e296b65a23af36d71be86ae72c4f423e1777be2e...v)
 
