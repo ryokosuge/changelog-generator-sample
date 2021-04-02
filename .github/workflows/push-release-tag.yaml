@@ -4,12 +4,13 @@ on:
   pull_request:
     branches:
       - master
-    types: [closed]
+    types:
+      - closed
 
 jobs:
   push-release-tag:
     # if: github.event.pull_request.merged == true && startsWith(github.head_ref, 'refs/head/release/')
-    if: github.event.pull_request.merged == true
+    # if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
