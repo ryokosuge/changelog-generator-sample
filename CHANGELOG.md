@@ -1,8 +1,8 @@
 # Changelog
 
-## [v1.2.0](https://github.com/ryokosuge/changelog-generator-sample/tree/v1.2.0) (2021-04-02)
+## [v1.5.0](https://github.com/ryokosuge/changelog-generator-sample/tree/v1.5.0) (2021-04-02)
 
-[Full Changelog](https://github.com/ryokosuge/changelog-generator-sample/compare/v1.0.0...v1.2.0)
+[Full Changelog](https://github.com/ryokosuge/changelog-generator-sample/compare/v1.0.0...v1.5.0)
 
 **Implemented enhancements:**
 
@@ -14,6 +14,8 @@
 
 **Fixed bugs:**
 
+- fix:	runs-on [\#20](https://github.com/ryokosuge/changelog-generator-sample/pull/20) ([ryokosuge](https://github.com/ryokosuge))
+- fix:	indent [\#19](https://github.com/ryokosuge/changelog-generator-sample/pull/19) ([ryokosuge](https://github.com/ryokosuge))
 - PR [\#15](https://github.com/ryokosuge/changelog-generator-sample/pull/15) ([ryokosuge](https://github.com/ryokosuge))
 - CHANGELOGのバージョン修正 [\#6](https://github.com/ryokosuge/changelog-generator-sample/pull/6) ([ryokosuge](https://github.com/ryokosuge))
 
