@@ -5,8 +5,8 @@ release:
 	$(MAKE) changelog
 	$(MAKE) npm/version
 
-release-version-tag:
-	npm version $(RELEASE_VERSION) -m "tag: release %s."
+release_version_tag:
+	npm version $(RELEASE_VERSION)
 
 changelog:
 	github_changelog_generator \
