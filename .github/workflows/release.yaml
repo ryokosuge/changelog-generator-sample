@@ -9,9 +9,15 @@ on:
 jobs:
   release:
     runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js 15.x
         uses: actions/setup-node@v2
         with:
           node-version: 15.x
+      - name: create CHANGELOG
+        run: echo $BRANCH
+        env:
+          BRANCH: ${{ GITHUB_REF/refs\/heads\// }}
