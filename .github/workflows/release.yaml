@@ -51,6 +51,7 @@ jobs:
           token: ${{ env.GITHUB_TOKEN }}
           title: release v${{ env.RELEASE_VERSION }}
           body: |
+            ## Check List
             - [ ] CHANGELOG
             - [ ] version up to v${{ env.RELEASE_VERSION }}
           labels: release
