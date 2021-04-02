@@ -1,0 +1,29 @@
+name: push-release-tag
+
+on:
+  pull_request:
+    branches:
+      - master
+    types: [closed]
+
+jobs:
+  push-relase-tag:
+    if: github.event.pull_request.merged == true && startsWith(github.head_ref, 'refs/head/release/')
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+      - name: Get the version
+        id: get_version
+        run: echo ::set-output name=VERSION::${GITHUB_HEAD_REF/refs\/heads\/release\//}
+      - name: git tag
+        uses: mathieudutour/github-tag-action@v5
+        with:
+          github_token: ${{ env.GITHUB_TOKEN }}
+          custom_tag: ${{ env.RELEASE_VERSION }}
+        env:
+          RELEASE_VERSION: ${{ steps.get_version.outputs.VERSION }}
+
