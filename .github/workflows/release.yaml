@@ -22,10 +22,16 @@ jobs:
         run: echo "set-output name=branch::${GITHUB_REF#refs/heads/}"
         id: extract_branch
       - name: create CHANGELOG
-        run: make changelog
+        uses: heinrichreimer/github-changelog-generator-action@v2
+        with:
+          user: ryokosuge
+          project: changelog-generator-sample
+          excludeLabels: release
+          token: ${{ env.GITHUB_TOKEN }}
+          futureRelease: ${{ env.RELEASE_VERSION }}
         env:
           BRANCH: ${{ steps.extract_branch.outputs.branch }}
-          RELEASE_VERSION: v1.1.0
-      - name: version up
-        run: make release-version-tag
-        
+          RELEASE_VERSION: 1.1.0
+      - name: git diff
+        run: git diff .
+
