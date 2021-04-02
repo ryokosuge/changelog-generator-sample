@@ -1,14 +1,12 @@
-VERSION:=$(shell echo $(BRANCH) | sed s/release\\///)
+RELEASE_VERSION:=$(shell echo $(RELEASE_BRANCH) | sed s/release\\///)
 GITHUB_TOKEN?=
 
 release:
 	$(MAKE) changelog
 	$(MAKE) npm/version
 
-npm/version:
-	npm version $(VERSION) -m "chore: release %s." 
-	git push origin $(BRANCH)
-	git push --tags
+release-version-tag:
+	npm version $(RELEASE_VERSION) -m "tag: release %s."
 
 changelog:
 	docker run -it --rm \
@@ -17,6 +15,5 @@ changelog:
 			--user ryokosuge \
 			--project changelog-generator-sample \
 			--exclude-labels release \
-			--future-release v$(VERSION) \
+			--future-release v$(RELEASE_VERSION) \
 			--token $(GITHUB_TOKEN)
-	git commit -a -m "doc: Update CHANGELOG"
