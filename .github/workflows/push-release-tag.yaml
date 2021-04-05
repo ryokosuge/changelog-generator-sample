@@ -9,7 +9,8 @@ on:
 
 jobs:
   push-release-tag:
-    if: github.event.pull_request.merged == true && startsWith(github.event.pull_request.head.ref, 'release/')
+    # if: github.event.pull_request.merged == true && startsWith(github.event.pull_request.head.ref, 'release/')
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
