@@ -1,8 +1,8 @@
 # Changelog
 
-## [v2.1.0](https://github.com/ryokosuge/changelog-generator-sample/tree/v2.1.0) (2021-04-05)
+## [v2.3.0](https://github.com/ryokosuge/changelog-generator-sample/tree/v2.3.0) (2021-04-05)
 
-[Full Changelog](https://github.com/ryokosuge/changelog-generator-sample/compare/v1.3.0...v2.1.0)
+[Full Changelog](https://github.com/ryokosuge/changelog-generator-sample/compare/v2.2.0...v2.3.0)
 
 **Implemented enhancements:**
 
@@ -17,6 +17,8 @@
 
 **Fixed bugs:**
 
+- if [\#36](https://github.com/ryokosuge/changelog-generator-sample/pull/36) ([ryokosuge](https://github.com/ryokosuge))
+- releaseブランチのmerge後が動かない [\#35](https://github.com/ryokosuge/changelog-generator-sample/pull/35) ([ryokosuge](https://github.com/ryokosuge))
 - startWithを疑う [\#33](https://github.com/ryokosuge/changelog-generator-sample/pull/33) ([ryokosuge](https://github.com/ryokosuge))
 - 空PR [\#32](https://github.com/ryokosuge/changelog-generator-sample/pull/32) ([ryokosuge](https://github.com/ryokosuge))
 - fix:	runs-on [\#20](https://github.com/ryokosuge/changelog-generator-sample/pull/20) ([ryokosuge](https://github.com/ryokosuge))
@@ -28,6 +30,10 @@
 
 - feat:	... [\#14](https://github.com/ryokosuge/changelog-generator-sample/pull/14) ([ryokosuge](https://github.com/ryokosuge))
 - Update README [\#11](https://github.com/ryokosuge/changelog-generator-sample/pull/11) ([ryokosuge](https://github.com/ryokosuge))
+
+## [v2.2.0](https://github.com/ryokosuge/changelog-generator-sample/tree/v2.2.0) (2021-04-05)
+
+[Full Changelog](https://github.com/ryokosuge/changelog-generator-sample/compare/v1.3.0...v2.2.0)
 
 ## [v1.3.0](https://github.com/ryokosuge/changelog-generator-sample/tree/v1.3.0) (2021-04-05)
 
