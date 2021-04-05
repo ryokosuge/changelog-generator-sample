@@ -1,8 +1,8 @@
 # Changelog
 
-## [v2.3.0](https://github.com/ryokosuge/changelog-generator-sample/tree/v2.3.0) (2021-04-05)
+## [v4.0.0](https://github.com/ryokosuge/changelog-generator-sample/tree/v4.0.0) (2021-04-05)
 
-[Full Changelog](https://github.com/ryokosuge/changelog-generator-sample/compare/v2.2.0...v2.3.0)
+[Full Changelog](https://github.com/ryokosuge/changelog-generator-sample/compare/v2.2.0...v4.0.0)
 
 **Implemented enhancements:**
 
@@ -17,6 +17,7 @@
 
 **Fixed bugs:**
 
+- release flowの見直し [\#39](https://github.com/ryokosuge/changelog-generator-sample/pull/39) ([ryokosuge](https://github.com/ryokosuge))
 - if [\#36](https://github.com/ryokosuge/changelog-generator-sample/pull/36) ([ryokosuge](https://github.com/ryokosuge))
 - releaseブランチのmerge後が動かない [\#35](https://github.com/ryokosuge/changelog-generator-sample/pull/35) ([ryokosuge](https://github.com/ryokosuge))
 - startWithを疑う [\#33](https://github.com/ryokosuge/changelog-generator-sample/pull/33) ([ryokosuge](https://github.com/ryokosuge))
