@@ -2,7 +2,7 @@ name: push-release-tag
 
 on:
   push:
-    - branches:
+    branches:
       - 'release/**' 
   # pull_request:
   #   branches:
