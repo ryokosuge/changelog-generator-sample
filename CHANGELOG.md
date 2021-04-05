@@ -1,8 +1,8 @@
 # Changelog
 
-## [v2.3.0](https://github.com/ryokosuge/changelog-generator-sample/tree/v2.3.0) (2021-04-05)
+## [v3.0.0](https://github.com/ryokosuge/changelog-generator-sample/tree/v3.0.0) (2021-04-05)
 
-[Full Changelog](https://github.com/ryokosuge/changelog-generator-sample/compare/v2.2.0...v2.3.0)
+[Full Changelog](https://github.com/ryokosuge/changelog-generator-sample/compare/v2.2.0...v3.0.0)
 
 **Implemented enhancements:**
 
