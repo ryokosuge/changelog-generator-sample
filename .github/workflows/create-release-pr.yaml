@@ -3,7 +3,8 @@ name: create-release-pr
 on:
   push:
     branches:
-      - 'release/**' 
+      # - 'release/**' 
+      - main
 
 jobs:
   create-release-pr:
