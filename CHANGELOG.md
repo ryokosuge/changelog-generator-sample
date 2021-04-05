@@ -1,11 +1,12 @@
 # Changelog
 
-## [v1.2.0](https://github.com/ryokosuge/changelog-generator-sample/tree/v1.2.0) (2021-04-05)
+## [v2.0.0](https://github.com/ryokosuge/changelog-generator-sample/tree/v2.0.0) (2021-04-05)
 
-[Full Changelog](https://github.com/ryokosuge/changelog-generator-sample/compare/v1.0.0...v1.2.0)
+[Full Changelog](https://github.com/ryokosuge/changelog-generator-sample/compare/v1.3.0...v2.0.0)
 
 **Implemented enhancements:**
 
+- release page作っちゃう [\#30](https://github.com/ryokosuge/changelog-generator-sample/pull/30) ([ryokosuge](https://github.com/ryokosuge))
 - push tag [\#27](https://github.com/ryokosuge/changelog-generator-sample/pull/27) ([ryokosuge](https://github.com/ryokosuge))
 - close eventをcatchしてみる [\#26](https://github.com/ryokosuge/changelog-generator-sample/pull/26) ([ryokosuge](https://github.com/ryokosuge))
 - 動け [\#16](https://github.com/ryokosuge/changelog-generator-sample/pull/16) ([ryokosuge](https://github.com/ryokosuge))
@@ -25,6 +26,10 @@
 
 - feat:	... [\#14](https://github.com/ryokosuge/changelog-generator-sample/pull/14) ([ryokosuge](https://github.com/ryokosuge))
 - Update README [\#11](https://github.com/ryokosuge/changelog-generator-sample/pull/11) ([ryokosuge](https://github.com/ryokosuge))
+
+## [v1.3.0](https://github.com/ryokosuge/changelog-generator-sample/tree/v1.3.0) (2021-04-05)
+
+[Full Changelog](https://github.com/ryokosuge/changelog-generator-sample/compare/v1.0.0...v1.3.0)
 
 ## [v1.0.0](https://github.com/ryokosuge/changelog-generator-sample/tree/v1.0.0) (2021-04-02)
 
