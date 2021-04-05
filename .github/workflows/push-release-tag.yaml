@@ -1,11 +1,14 @@
 name: push-release-tag
 
 on:
-  pull_request:
-    branches:
+  push:
+    - branches:
       - 'release/**' 
-    # types:
-    #   - closed
+  # pull_request:
+  #   branches:
+  #     - 'release/**' 
+  #   types:
+  #     - closed
 
 jobs:
   push-release-tag:
