@@ -39,3 +39,8 @@ jobs:
           github_token: ${{ env.GITHUB_TOKEN }}
         env:
           RELEASE_VERSION: ${{ steps.get_version.outputs.VERSION }}
+      - name: Create release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: Release ${{ steps.tag_version.outputs.new_tag }}
+          tag_name: ${{ steps.tag_version.outputs.new_tag }}
