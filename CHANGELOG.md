@@ -1,8 +1,8 @@
 # Changelog
 
-## [v2.0.0](https://github.com/ryokosuge/changelog-generator-sample/tree/v2.0.0) (2021-04-05)
+## [v2.1.0](https://github.com/ryokosuge/changelog-generator-sample/tree/v2.1.0) (2021-04-05)
 
-[Full Changelog](https://github.com/ryokosuge/changelog-generator-sample/compare/v1.3.0...v2.0.0)
+[Full Changelog](https://github.com/ryokosuge/changelog-generator-sample/compare/v1.3.0...v2.1.0)
 
 **Implemented enhancements:**
 
@@ -17,6 +17,8 @@
 
 **Fixed bugs:**
 
+- startWithを疑う [\#33](https://github.com/ryokosuge/changelog-generator-sample/pull/33) ([ryokosuge](https://github.com/ryokosuge))
+- 空PR [\#32](https://github.com/ryokosuge/changelog-generator-sample/pull/32) ([ryokosuge](https://github.com/ryokosuge))
 - fix:	runs-on [\#20](https://github.com/ryokosuge/changelog-generator-sample/pull/20) ([ryokosuge](https://github.com/ryokosuge))
 - fix:	indent [\#19](https://github.com/ryokosuge/changelog-generator-sample/pull/19) ([ryokosuge](https://github.com/ryokosuge))
 - PR [\#15](https://github.com/ryokosuge/changelog-generator-sample/pull/15) ([ryokosuge](https://github.com/ryokosuge))
