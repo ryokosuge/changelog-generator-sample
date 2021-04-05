@@ -51,7 +51,7 @@ jobs:
           body: |
             ## Check List
             - [ ] CHANGELOG
-            - [ ] version up to [v${{ env.RELEASE_VERSION }}](https://github.com/ryokosuge/changelog-generator-sample/releases/tag/${{ env.RELEASE_VERSION }})
+            - [ ] version up to [v${{ env.RELEASE_VERSION }}](https://github.com/ryokosuge/changelog-generator-sample/releases/tag/v${{ env.RELEASE_VERSION }})
           labels: release
           branch: ${{ env.RELEASE_BRANCH }}
           commit-message: "[ci skip] release v${{ env.RELEASE_VERSION }}"
