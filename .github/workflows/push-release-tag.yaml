@@ -14,10 +14,6 @@ jobs:
     env:
       GITHUB_TOKEN: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
     steps:
-      - name: output json
-        env:
-          GITHUB_CONTEX: ${{ toJSON(github) }}
-        run: echo "$GITHUB_CONTEXT"
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.event.pull_request.head.sha }}
@@ -38,3 +34,8 @@ jobs:
           github_token: ${{ env.GITHUB_TOKEN }}
         env:
           RELEASE_VERSION: ${{ steps.get_version.outputs.VERSION }}
+      - name: Create release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: Release ${{ steps.tag_version.outputs.new_tag }}
+          tag_name: ${{ steps.tag_version.outputs.new_tag }}
