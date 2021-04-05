@@ -1,11 +1,13 @@
 # Changelog
 
-## [v1.1.1](https://github.com/ryokosuge/changelog-generator-sample/tree/v1.1.1) (2021-04-02)
+## [v1.2.0](https://github.com/ryokosuge/changelog-generator-sample/tree/v1.2.0) (2021-04-05)
 
-[Full Changelog](https://github.com/ryokosuge/changelog-generator-sample/compare/v1.0.0...v1.1.1)
+[Full Changelog](https://github.com/ryokosuge/changelog-generator-sample/compare/v1.0.0...v1.2.0)
 
 **Implemented enhancements:**
 
+- push tag [\#27](https://github.com/ryokosuge/changelog-generator-sample/pull/27) ([ryokosuge](https://github.com/ryokosuge))
+- close eventをcatchしてみる [\#26](https://github.com/ryokosuge/changelog-generator-sample/pull/26) ([ryokosuge](https://github.com/ryokosuge))
 - 動け [\#16](https://github.com/ryokosuge/changelog-generator-sample/pull/16) ([ryokosuge](https://github.com/ryokosuge))
 - PR merge後のworkflowの作成 [\#12](https://github.com/ryokosuge/changelog-generator-sample/pull/12) ([ryokosuge](https://github.com/ryokosuge))
 - release v1.2.0 [\#10](https://github.com/ryokosuge/changelog-generator-sample/pull/10) ([ryokosuge](https://github.com/ryokosuge))
