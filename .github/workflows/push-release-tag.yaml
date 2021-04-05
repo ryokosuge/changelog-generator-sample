@@ -4,21 +4,16 @@ on:
   pull_request:
     branches:
       - main
-  #   types:
-  #     - closed
+    types:
+      - closed
 
 jobs:
   push-release-tag:
-    # if: github.event.pull_request.merged == true && startsWith(github.event.pull_request.head.ref, 'release/')
-    if: startsWith(github.event.pull_request.head.ref, 'release/')
+    if: github.event.pull_request.merged == true && startsWith(github.event.pull_request.head.ref, 'release/')
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
     steps:
-      - name: output json
-        env:
-          GITHUB_CONTEX: ${{ toJSON(github) }}
-        run: echo "$GITHUB_CONTEXT"
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.event.pull_request.head.sha }}
