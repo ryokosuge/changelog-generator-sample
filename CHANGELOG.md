@@ -1,5 +1,13 @@
 # Changelog
 
+## [v1.1.0](https://github.com/ryokosuge/changelog-generator-sample/tree/v1.1.0) (2021-04-07)
+
+[Full Changelog](https://github.com/ryokosuge/changelog-generator-sample/compare/v1.0.0...v1.1.0)
+
+**Merged pull requests:**
+
+- Update README [\#43](https://github.com/ryokosuge/changelog-generator-sample/pull/43) ([ryokosuge](https://github.com/ryokosuge))
+
 ## [v1.0.0](https://github.com/ryokosuge/changelog-generator-sample/tree/v1.0.0) (2021-04-07)
 
 [Full Changelog](https://github.com/ryokosuge/changelog-generator-sample/compare/e296b65a23af36d71be86ae72c4f423e1777be2e...v1.0.0)
