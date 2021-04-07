@@ -1,7 +1,7 @@
 name: Build and Deploy to Netlify Preview
 
 on:
-  pull_requests:
+  pull_request:
     branches:
       - main
 
