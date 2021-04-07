@@ -1,5 +1,13 @@
 # Changelog
 
+## [v2.0.0](https://github.com/ryokosuge/changelog-generator-sample/tree/v2.0.0) (2021-04-07)
+
+[Full Changelog](https://github.com/ryokosuge/changelog-generator-sample/compare/v1.1.0...v2.0.0)
+
+**Implemented enhancements:**
+
+- netlifyへのpreview deploy [\#45](https://github.com/ryokosuge/changelog-generator-sample/pull/45) ([ryokosuge](https://github.com/ryokosuge))
+
 ## [v1.1.0](https://github.com/ryokosuge/changelog-generator-sample/tree/v1.1.0) (2021-04-07)
 
 [Full Changelog](https://github.com/ryokosuge/changelog-generator-sample/compare/v1.0.0...v1.1.0)
