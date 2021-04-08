@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - 'release/**' 
-      - 'fix/release-commit-tag'
 
 jobs:
   create-release-pr:
@@ -36,16 +35,14 @@ jobs:
         run: make changelog
         env:
           RELEASE_BRANCH: ${{ steps.extract_branch.outputs.BRANCH }}
-          # RELEASE_VERSION: ${{ steps.get_version.outputs.VERSION }}
-          RELEASE_VERSION: 99.99.00
+          RELEASE_VERSION: ${{ steps.get_version.outputs.VERSION }}
       - name: set npm config
         run: npm config set git-tag-version false
       - name: npm version
         run: make release_version_tag
         env:
           RELEASE_BRANCH: ${{ steps.extract_branch.outputs.BRANCH }}
-          # RELEASE_VERSION: ${{ steps.get_version.outputs.VERSION }}
-          RELEASE_VERSION: 99.99.00
+          RELEASE_VERSION: ${{ steps.get_version.outputs.VERSION }}
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
@@ -55,14 +52,15 @@ jobs:
             ## Check List
             - [ ] CHANGELOGの確認
             - [ ] [最新のリリースノート](https://github.com/ryokosuge/changelog-generator-sample/releases/tag/v${{ env.RELEASE_VERSION }})に変更内容を追加する
+
+            releaseを取り消す場合は[v${{ env.RELEASE_VERSION }}のリリースとタグ](https://github.com/ryokosuge/changelog-generator-sample/releases/tag/v${{ env.RELEASE_VERSION }})を消して、このPRを閉じてください
           labels: release
           base: main
           branch: ${{ env.RELEASE_BRANCH }}
           commit-message: "[ci skip] release v${{ env.RELEASE_VERSION }}"
         env:
           RELEASE_BRANCH: ${{ steps.extract_branch.outputs.BRANCH }}
-          # RELEASE_VERSION: ${{ steps.get_version.outputs.VERSION }}
-          RELEASE_VERSION: 99.99.00
+          RELEASE_VERSION: ${{ steps.get_version.outputs.VERSION }}
       - name: Get HEAD Hash
         id: get_last_commit_hash
         run: echo "::set-output name=HASH::$(git rev-parse HEAD)"
@@ -76,25 +74,22 @@ jobs:
           commit: ${{ steps.get_last_commit_hash.outputs.HASH }}
         env:
           RELEASE_BRANCH: ${{ steps.extract_branch.outputs.BRANCH }}
-          # RELEASE_VERSION: ${{ steps.get_version.outputs.VERSION }}
-          RELEASE_VERSION: 99.99.00
-          # RELEASE_TAG_NAME: v${{ steps.get_version.outputs.VERSION }}
-          RELEASE_TAG_NAME: v99.99.00
-
-      # - name: yarn
-      #   run: yarn
-      # - name: Build
-      #   run: yarn build
-      # - name: Deploy to Netlify Preview
-      #   uses: nwtgck/actions-netlify@v1.1
-      #   with:
-      #     publish-dir: './build'
-      #     production-branch: main
-      #     production-deploy: true
-      #     enable-pull-request-comment: false
-      #     enable-commit-comment: false
-      #     enable-commit-status: false
-      #     overwrites-pull-request-comment: false
-      #   env:
-      #     NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-      #     NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          RELEASE_VERSION: ${{ steps.get_version.outputs.VERSION }}
+          RELEASE_TAG_NAME: v${{ steps.get_version.outputs.VERSION }}
+      - name: yarn
+        run: yarn
+      - name: Build
+        run: yarn build
+      - name: Deploy to Netlify Preview
+        uses: nwtgck/actions-netlify@v1.1
+        with:
+          publish-dir: './build'
+          production-branch: main
+          production-deploy: true
+          enable-pull-request-comment: false
+          enable-commit-comment: false
+          enable-commit-status: false
+          overwrites-pull-request-comment: false
+        env:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
