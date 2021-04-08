@@ -1,5 +1,17 @@
 # Changelog
 
+## [v3.0.0](https://github.com/ryokosuge/changelog-generator-sample/tree/v3.0.0) (2021-04-08)
+
+[Full Changelog](https://github.com/ryokosuge/changelog-generator-sample/compare/v2.0.0...v3.0.0)
+
+**Implemented enhancements:**
+
+- NetlifyのActionを消す [\#55](https://github.com/ryokosuge/changelog-generator-sample/pull/55) ([ryokosuge](https://github.com/ryokosuge))
+
+**Fixed bugs:**
+
+- release時に打つtagのcommit hashが望んでいたものではなかったので修正 [\#54](https://github.com/ryokosuge/changelog-generator-sample/pull/54) ([ryokosuge](https://github.com/ryokosuge))
+
 ## [v2.0.0](https://github.com/ryokosuge/changelog-generator-sample/tree/v2.0.0) (2021-04-07)
 
 [Full Changelog](https://github.com/ryokosuge/changelog-generator-sample/compare/v1.1.0...v2.0.0)
