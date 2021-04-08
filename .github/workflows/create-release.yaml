@@ -74,7 +74,7 @@ jobs:
           RELEASE_BRANCH: ${{ steps.extract_branch.outputs.BRANCH }}
           # RELEASE_VERSION: ${{ steps.get_version.outputs.VERSION }}
           RELEASE_VERSION: 99.99.00
-          RELEASE_TAG_NAME: v${{ RELEASE_VERSION }}
+          RELEASE_TAG_NAME: v${{ env.RELEASE_VERSION }}
 
       # - name: Bump version and push tag
       #   id: tag_version
