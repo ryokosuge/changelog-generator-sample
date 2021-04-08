@@ -46,8 +46,6 @@ jobs:
           RELEASE_BRANCH: ${{ steps.extract_branch.outputs.BRANCH }}
           # RELEASE_VERSION: ${{ steps.get_version.outputs.VERSION }}
           RELEASE_VERSION: 99.99.00
-      - name: git diff
-        run: git diff
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v3
         with:
@@ -65,21 +63,19 @@ jobs:
           RELEASE_BRANCH: ${{ steps.extract_branch.outputs.BRANCH }}
           # RELEASE_VERSION: ${{ steps.get_version.outputs.VERSION }}
           RELEASE_VERSION: 99.99.00
-      - name: commit log
-        run: git log
-      # - name: Bump version and push tag
-      #   id: tag_version
-      #   uses: mathieudutour/github-tag-action@v5.4
-      #   with:
-      #     custom_tag: ${{ env.RELEASE_VERSION }}
-      #     github_token: ${{ env.GITHUB_TOKEN }}
-      #   env:
-      #     RELEASE_VERSION: ${{ steps.get_version.outputs.VERSION }}
-      # - name: Create release
-      #   uses: softprops/action-gh-release@v1
-      #   with:
-      #     name: Release ${{ steps.tag_version.outputs.new_tag }}
-      #     tag_name: ${{ steps.tag_version.outputs.new_tag }}
+      - name: Bump version and push tag
+        id: tag_version
+        uses: mathieudutour/github-tag-action@v5.4
+        with:
+          custom_tag: ${{ env.RELEASE_VERSION }}
+          github_token: ${{ env.GITHUB_TOKEN }}
+        env:
+          RELEASE_VERSION: ${{ steps.get_version.outputs.VERSION }}
+      - name: Create release
+        uses: softprops/action-gh-release@v1
+        with:
+          name: Release ${{ steps.tag_version.outputs.new_tag }}
+          tag_name: ${{ steps.tag_version.outputs.new_tag }}
       # - name: yarn
       #   run: yarn
       # - name: Build
