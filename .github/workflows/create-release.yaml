@@ -56,11 +56,19 @@ jobs:
             - [ ] CHANGELOGの確認
             - [ ] [最新のリリースノート](https://github.com/ryokosuge/changelog-generator-sample/releases/tag/v${{ env.RELEASE_VERSION }})に変更内容を追加する
           labels: release
+          base: main
+          branch: ${{ env.RELEASE_BRANCH }}
           commit-message: "[ci skip] release v${{ env.RELEASE_VERSION }}"
         env:
           RELEASE_BRANCH: ${{ steps.extract_branch.outputs.BRANCH }}
           # RELEASE_VERSION: ${{ steps.get_version.outputs.VERSION }}
           RELEASE_VERSION: 99.99.00
+      - name: Get HEAD Hash
+        id: get_last_commit_hash
+        run: |
+          hash=$(git rev-parse HEAD)
+          echo $hash
+          echo "::set-output name=HASH::$hash"
       - name: Create Tag & Release
         uses: ncipollo/release-action@v1
         with:
@@ -68,11 +76,13 @@ jobs:
           name: Release ${{ env.RELEASE_TAG_NAME }}
           tag: ${{ env.RELEASE_TAG_NAME }}
           token: ${{ env.GITHUB_TOKEN }}
+          commit: ${{ steps.get_last_commit_hash.outputs.HASH }}
         env:
           RELEASE_BRANCH: ${{ steps.extract_branch.outputs.BRANCH }}
           # RELEASE_VERSION: ${{ steps.get_version.outputs.VERSION }}
           RELEASE_VERSION: 99.99.00
-          RELEASE_TAG_NAME: v${{ env.RELEASE_VERSION }}
+          # RELEASE_TAG_NAME: v${{ steps.get_version.outputs.VERSION }}
+          RELEASE_TAG_NAME: v99.99.00
 
       # - name: Bump version and push tag
       #   id: tag_version
