@@ -36,14 +36,16 @@ jobs:
         run: make changelog
         env:
           RELEASE_BRANCH: ${{ steps.extract_branch.outputs.BRANCH }}
-          RELEASE_VERSION: ${{ steps.get_version.outputs.VERSION }}
+          # RELEASE_VERSION: ${{ steps.get_version.outputs.VERSION }}
+          RELEASE_VERSION: 99.99.00
       - name: set npm config
         run: npm config set git-tag-version false
       - name: npm version
         run: make release_version_tag
         env:
           RELEASE_BRANCH: ${{ steps.extract_branch.outputs.BRANCH }}
-          RELEASE_VERSION: ${{ steps.get_version.outputs.VERSION }}
+          # RELEASE_VERSION: ${{ steps.get_version.outputs.VERSION }}
+          RELEASE_VERSION: 99.99.00
       - name: git diff
         run: git diff
       - name: Create Pull Request
