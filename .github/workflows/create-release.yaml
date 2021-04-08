@@ -76,20 +76,3 @@ jobs:
           RELEASE_BRANCH: ${{ steps.extract_branch.outputs.BRANCH }}
           RELEASE_VERSION: ${{ steps.get_version.outputs.VERSION }}
           RELEASE_TAG_NAME: v${{ steps.get_version.outputs.VERSION }}
-      - name: yarn
-        run: yarn
-      - name: Build
-        run: yarn build
-      - name: Deploy to Netlify Preview
-        uses: nwtgck/actions-netlify@v1.1
-        with:
-          publish-dir: './build'
-          production-branch: main
-          production-deploy: true
-          enable-pull-request-comment: false
-          enable-commit-comment: false
-          enable-commit-status: false
-          overwrites-pull-request-comment: false
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
