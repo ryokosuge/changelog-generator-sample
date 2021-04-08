@@ -65,10 +65,7 @@ jobs:
           RELEASE_VERSION: 99.99.00
       - name: Get HEAD Hash
         id: get_last_commit_hash
-        run: |
-          hash=$(git rev-parse HEAD)
-          echo $hash
-          echo "::set-output name=HASH::$hash"
+        run: echo "::set-output name=HASH::$(git rev-parse HEAD)"
       - name: Create Tag & Release
         uses: ncipollo/release-action@v1
         with:
@@ -84,23 +81,6 @@ jobs:
           # RELEASE_TAG_NAME: v${{ steps.get_version.outputs.VERSION }}
           RELEASE_TAG_NAME: v99.99.00
 
-      # - name: Bump version and push tag
-      #   id: tag_version
-      #   uses: mathieudutour/github-tag-action@v5.4
-      #   with:
-      #     github_token: ${{ env.GITHUB_TOKEN }}
-      #     release_branches: ${{ env.RELEASE_BRANCH }}
-      #     custom_tag: ${{ env.RELEASE_VERSION }}
-      #     default_bump: false
-      #     create_annotated_tag: true
-      #   env:
-      #     RELEASE_BRANCH: ${{ steps.extract_branch.outputs.BRANCH }}
-      #     RELEASE_VERSION: ${{ steps.get_version.outputs.VERSION }}
-      # - name: Create release
-      #   uses: softprops/action-gh-release@v1
-      #   with:
-      #     name: Release ${{ steps.tag_version.outputs.new_tag }}
-      #     tag_name: ${{ steps.tag_version.outputs.new_tag }}
       # - name: yarn
       #   run: yarn
       # - name: Build
