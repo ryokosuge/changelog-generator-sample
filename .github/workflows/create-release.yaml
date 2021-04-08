@@ -57,7 +57,6 @@ jobs:
             - [ ] [最新のリリースノート](https://github.com/ryokosuge/changelog-generator-sample/releases/tag/v${{ env.RELEASE_VERSION }})に変更内容を追加する
           labels: release
           branch: ${{ env.RELEASE_BRANCH }}
-          base: ${{ github.head_ref }}
           commit-message: "[ci skip] release v${{ env.RELEASE_VERSION }}"
         env:
           RELEASE_BRANCH: ${{ steps.extract_branch.outputs.BRANCH }}
