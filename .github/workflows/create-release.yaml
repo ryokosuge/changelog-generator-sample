@@ -72,6 +72,7 @@ jobs:
           tag: ${{ env.RELEASE_TAG_NAME }}
           token: ${{ env.GITHUB_TOKEN }}
           commit: ${{ steps.get_last_commit_hash.outputs.HASH }}
+          draft: true
         env:
           RELEASE_BRANCH: ${{ steps.extract_branch.outputs.BRANCH }}
           RELEASE_VERSION: ${{ steps.get_version.outputs.VERSION }}
