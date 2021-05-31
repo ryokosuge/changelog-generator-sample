@@ -24,6 +24,6 @@ release_note:
 		--project changelog-generator-sample \
 		--exclude-labels release \
 		--future-release v$(RELEASE_VERSION) \
-		--since-tag $(shell git tag | tail -n 1 | head -n 1) \
+		--since-tag $(shell git describe --abbrev=0 --tags) \
 		--output $(OUTPUT_FILE) \
 		--token $(GITHUB_TOKEN)
