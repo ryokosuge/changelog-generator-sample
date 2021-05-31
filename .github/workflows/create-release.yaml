@@ -51,9 +51,12 @@ jobs:
           body: |
             ## Check List
             - [ ] CHANGELOGの確認
-            - [ ] [最新のリリースノート](https://github.com/ryokosuge/changelog-generator-sample/releases/tag/v${{ env.RELEASE_VERSION }})に変更内容を追加する
+            - [ ] [最新のdraftリリースノート](https://github.com/ryokosuge/changelog-generator-sample/releases/tag/v${{ env.RELEASE_VERSION }})をpublish
 
-            releaseを取り消す場合は[v${{ env.RELEASE_VERSION }}のリリースとタグ](https://github.com/ryokosuge/changelog-generator-sample/releases/tag/v${{ env.RELEASE_VERSION }})を消して、このPRを閉じてください
+            ### releaseを取り消す場合
+            1. [v${{ env.RELEASE_VERSION }}のdraftリリース](https://github.com/ryokosuge/changelog-generator-sample/releases/tag/v${{ env.RELEASE_VERSION }})を削除
+            2. このPRを閉じる
+            3. ブランチを削除
           labels: release
           base: main
           branch: ${{ env.RELEASE_BRANCH }}
