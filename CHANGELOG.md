@@ -1,5 +1,17 @@
 # Changelog
 
+## [v4.0.0](https://github.com/ryokosuge/changelog-generator-sample/tree/v4.0.0) (2021-05-31)
+
+[Full Changelog](https://github.com/ryokosuge/changelog-generator-sample/compare/v3.1.0...v4.0.0)
+
+**Implemented enhancements:**
+
+- release\_noteの自動生成と添付をやってみる [\#59](https://github.com/ryokosuge/changelog-generator-sample/pull/59) ([ryokosuge](https://github.com/ryokosuge))
+
+**Fixed bugs:**
+
+- headがないと文章崩れてる [\#60](https://github.com/ryokosuge/changelog-generator-sample/pull/60) ([ryokosuge](https://github.com/ryokosuge))
+
 ## [v3.1.0](https://github.com/ryokosuge/changelog-generator-sample/tree/v3.1.0) (2021-04-12)
 
 [Full Changelog](https://github.com/ryokosuge/changelog-generator-sample/compare/v3.0.0...v3.1.0)
