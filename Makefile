@@ -26,5 +26,4 @@ release_note:
 		--future-release v$(RELEASE_VERSION) \
 		--since-tag $(shell git tag | tail -n 1 | head -n 1) \
 		--output $(OUTPUT_FILE) \
-		--head-label "" \
 		--token $(GITHUB_TOKEN)
