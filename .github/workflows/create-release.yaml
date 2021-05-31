@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - 'release/**' 
-      - 'fix/pull-tags'
 
 jobs:
   create-release-pr:
@@ -29,8 +28,7 @@ jobs:
         run: gem install github_changelog_generator
       - name: Get the version
         id: get_version
-        # run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/heads\/release\//}
-        run: echo ::set-output name=VERSION::4.0.0
+        run: echo ::set-output name=VERSION::${GITHUB_REF/refs\/heads\/release\//}
       - name: Extract branch name
         shell: bash
         run: echo ::set-output name=BRANCH::${GITHUB_REF/refs\/heads\//}
