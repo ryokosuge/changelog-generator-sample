@@ -64,6 +64,12 @@ jobs:
       - name: Get HEAD Hash
         id: get_last_commit_hash
         run: echo "::set-output name=HASH::$(git rev-parse HEAD)"
+      - name: Create Release Note
+        run: make release_note
+        env:
+          RELEASE_BRANCH: ${{ steps.extract_branch.outputs.BRANCH }}
+          RELEASE_VERSION: ${{ steps.get_version.outputs.VERSION }}
+          OUTPUT_FILE: release_note.md
       - name: Create Tag & Release
         uses: ncipollo/release-action@v1
         with:
@@ -73,6 +79,7 @@ jobs:
           token: ${{ env.GITHUB_TOKEN }}
           commit: ${{ steps.get_last_commit_hash.outputs.HASH }}
           draft: true
+          bodyFile: release_note.md
         env:
           RELEASE_BRANCH: ${{ steps.extract_branch.outputs.BRANCH }}
           RELEASE_VERSION: ${{ steps.get_version.outputs.VERSION }}
