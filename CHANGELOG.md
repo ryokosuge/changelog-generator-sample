@@ -1,5 +1,14 @@
 # Changelog
 
+## [v4.1.1](https://github.com/ryokosuge/changelog-generator-sample/tree/v4.1.1) (2021-08-11)
+
+[Full Changelog](https://github.com/ryokosuge/changelog-generator-sample/compare/v4.1.0...v4.1.1)
+
+**Fixed bugs:**
+
+- READMEの加筆 [\#73](https://github.com/ryokosuge/changelog-generator-sample/pull/73) ([ryokosuge](https://github.com/ryokosuge))
+- いらないの消したり、outputを削除したり [\#72](https://github.com/ryokosuge/changelog-generator-sample/pull/72) ([ryokosuge](https://github.com/ryokosuge))
+
 ## [v4.1.0](https://github.com/ryokosuge/changelog-generator-sample/tree/v4.1.0) (2021-08-11)
 
 [Full Changelog](https://github.com/ryokosuge/changelog-generator-sample/compare/v4.0.3...v4.1.0)
