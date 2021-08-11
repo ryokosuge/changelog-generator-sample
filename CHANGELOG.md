@@ -1,5 +1,9 @@
 # Changelog
 
+## [v4.0.2](https://github.com/ryokosuge/changelog-generator-sample/tree/v4.0.2) (2021-08-11)
+
+[Full Changelog](https://github.com/ryokosuge/changelog-generator-sample/compare/v4.0.1...v4.0.2)
+
 ## [v4.0.1](https://github.com/ryokosuge/changelog-generator-sample/tree/v4.0.1) (2021-05-31)
 
 [Full Changelog](https://github.com/ryokosuge/changelog-generator-sample/compare/v4.0.0...v4.0.1)

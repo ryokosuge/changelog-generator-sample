@@ -36,6 +36,8 @@ jobs:
         run: make changelog
         env:
           RELEASE_VERSION: ${{ github.event.inputs.release_version }}
+      - name: Output CHANGELOG
+        run: cat CHANGELOG.md
       - name: set npm config
         run: npm config set git-tag-version false
       - name: npm version
@@ -51,7 +53,7 @@ jobs:
           git diff
       - name: add & commit & push
         run: |
-          git add .
+          git add CHANGELOG.md package.json
           git commit -m "[ci skip] release ${{ env.RELEASE_VERSION }}"
           git push
         env:
