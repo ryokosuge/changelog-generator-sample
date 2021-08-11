@@ -49,10 +49,11 @@ jobs:
       - name: git diff
         run: |
           git diff
-      - name: add & commit
+      - name: add & commit & push
         run: |
           git add .
           git commit -m "[ci skip] release ${{ env.RELEASE_VERSION }}"
+          git push
         env:
           RELEASE_VERSION: ${{ github.event.inputs.release_version }}
       - name: Create Release Note
@@ -69,5 +70,5 @@ jobs:
           token: ${{ env.GITHUB_TOKEN }}
           bodyFile: release_note.md
         env:
-          RELEASE_TAG_NAME: v${{ steps.get_version.outputs.VERSION }}
+          RELEASE_VERSION: ${{ github.event.inputs.release_version }}
 
