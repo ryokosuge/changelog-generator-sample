@@ -70,5 +70,5 @@ jobs:
           token: ${{ env.GITHUB_TOKEN }}
           bodyFile: release_note.md
         env:
-          RELEASE_VERSION: ${{ github.event.inputs.release_version }}
+          RELEASE_TAG_NAME: v${{ github.event.inputs.release_version }}
 
