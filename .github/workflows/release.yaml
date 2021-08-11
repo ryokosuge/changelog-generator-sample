@@ -1,0 +1,71 @@
+name: release
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_version:
+        required: true
+        description: release version
+
+jobs:
+  create-release-pr:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Dump GitHub context
+        env:
+          GITHUB_CONTEXT: ${{ toJSON(github) }}
+        run: echo "$GITHUB_CONTEXT"
+      - name: Unshallow
+        run: git fetch --prune --unshallow --tags
+      - name: Use Node.js 15.x
+        uses: actions/setup-node@v2
+        with:
+          node-version: 15.x
+      - name: Use Ruby 2.6
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.6
+      - name: install github_changelog_generate
+        run: gem install github_changelog_generator
+      - name: create CHANGELOG
+        run: make changelog
+        env:
+          RELEASE_VERSION: ${{ github.event.inputs.release_version }}
+      - name: set npm config
+        run: npm config set git-tag-version false
+      - name: npm version
+        run: make release_version_tag
+        env:
+          RELEASE_VERSION: ${{ github.event.inputs.release_version }}
+      - name: git config
+        run: |
+          git config --local user.email ryo.kosuge@gmail.com
+          git config --local user.name ryokosuge
+      - name: git diff
+        run: |
+          git diff
+      - name: add & commit
+        run: |
+          git add .
+          git commit -m "[ci skip] release ${{ env RELEASE_VERSION }}"
+        env:
+          RELEASE_VERSION: ${{ github.event.inputs.release_version }}
+      - name: Create Release Note
+        run: make release_note
+        env:
+          RELEASE_VERSION: ${{ github.event.inputs.release_version }}
+          OUTPUT_FILE: release_note.md
+      - name: Create Tag & Release
+        uses: ncipollo/release-action@v1
+        with:
+          allowUpdates: true
+          name: Release ${{ env.RELEASE_TAG_NAME }}
+          tag: ${{ env.RELEASE_TAG_NAME }}
+          token: ${{ env.GITHUB_TOKEN }}
+          bodyFile: release_note.md
+        env:
+          RELEASE_TAG_NAME: v${{ steps.get_version.outputs.VERSION }}
+
