@@ -8,12 +8,14 @@ on:
         description: release version
 
 jobs:
-  create-release-pr:
+  releas:
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
     steps:
       - uses: actions/checkout@v2
+        with:
+          ref: ${{ github.event.ref }}
       - name: Dump GitHub context
         env:
           GITHUB_CONTEXT: ${{ toJSON(github) }}
