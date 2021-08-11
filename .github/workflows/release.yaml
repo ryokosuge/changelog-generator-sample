@@ -16,10 +16,6 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.event.ref }}
-      - name: Dump GitHub context
-        env:
-          GITHUB_CONTEXT: ${{ toJSON(github) }}
-        run: echo "$GITHUB_CONTEXT"
       - name: Unshallow
         run: git fetch --prune --unshallow --tags
       - name: Use Node.js 15.x
@@ -36,8 +32,6 @@ jobs:
         run: make changelog
         env:
           RELEASE_VERSION: ${{ github.event.inputs.release_version }}
-      - name: Output CHANGELOG
-        run: cat CHANGELOG.md
       - name: set npm config
         run: npm config set git-tag-version false
       - name: npm version
@@ -48,9 +42,6 @@ jobs:
         run: |
           git config --local user.email ryo.kosuge@gmail.com
           git config --local user.name ryokosuge
-      - name: git diff
-        run: |
-          git diff
       - name: add & commit & push
         run: |
           git add CHANGELOG.md package.json
