@@ -16,10 +16,6 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: ${{ github.event.ref }}
-      - name: Dump GitHub context
-        env:
-          GITHUB_CONTEXT: ${{ toJSON(github) }}
-        run: echo "$GITHUB_CONTEXT"
       - name: Unshallow
         run: git fetch --prune --unshallow --tags
       - name: Use Node.js 15.x
