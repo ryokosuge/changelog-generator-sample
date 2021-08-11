@@ -50,7 +50,7 @@ jobs:
       - name: add & commit
         run: |
           git add .
-          git commit -m "[ci skip] release ${{ env RELEASE_VERSION }}"
+          git commit -m "[ci skip] release ${{ env.RELEASE_VERSION }}"
         env:
           RELEASE_VERSION: ${{ github.event.inputs.release_version }}
       - name: Create Release Note
